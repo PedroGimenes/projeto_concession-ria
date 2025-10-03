@@ -383,14 +383,26 @@
             
             loginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
+                console.log('Formulário submetido'); // Debug
                 
-                const username = document.getElementById('username').value;
-                const password = document.getElementById('password').value;
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
                 
-                // Verificar credenciais
-                const isValid = validCredentials.some(cred => 
+                console.log('Usuário:', username); // Debug
+                console.log('Senha:', password); // Debug
+                
+                // Verificar se os campos estão preenchidos
+                if (!username || !password) {
+                    showMessage('Por favor, preencha todos os campos.', 'error');
+                    return;
+                }
+                
+                // Verificar credenciais e obter dados do usuário
+                const user = validCredentials.find(cred => 
                     cred.username === username && cred.password === password
                 );
+                
+                console.log('Usuário encontrado:', user); // Debug
                 
                 if (user) {
                     showMessage(`Login realizado com sucesso! Bem-vindo, ${user.welcomeMessage}. Redirecionando...`, 'success');
