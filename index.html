@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -14,6 +14,276 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .login-container {
+                width: 100%;
+                max-width: 1000px;
+                background-color: white;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                display: flex;
+                min-height: 550px;
+                margin: 0 auto;
+            }
+
+            .left-section {
+                flex: 1;
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                            url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+                background-size: cover;
+                background-position: center;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                color: white;
+            }
+
+            .logo {
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .logo span {
+                color: #ffcc00;
+                font-weight: 300;
+            }
+
+            .subtitle {
+                font-size: 16px;
+                color: #ddd;
+                margin-bottom: 5px;
+                letter-spacing: 2px;
+                font-weight: 600;
+            }
+
+            .welcome-text {
+                margin-top: 30px;
+            }
+
+            .welcome-text h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+                color: white;
+            }
+
+            .welcome-text p {
+                font-size: 15px;
+                color: #ccc;
+                line-height: 1.6;
+            }
+
+            .car-features {
+                margin-top: 30px;
+            }
+
+            .feature {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                color: #ddd;
+            }
+
+            .feature i {
+                margin-right: 10px;
+                color: #ffcc00;
+                font-size: 18px;
+                width: 20px;
+            }
+
+            .right-section {
+                flex: 1;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background: #fff;
+            }
+
+            .login-form-container {
+                width: 100%;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .login-title {
+                text-align: center;
+                font-size: 24px;
+                margin-bottom: 30px;
+                font-weight: 600;
+                color: #222;
+                letter-spacing: 1px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+                position: relative;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                color: #555;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 14px 15px 14px 45px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+                color: #333;
+                font-size: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .form-group input:focus {
+                outline: none;
+                border-color: #666;
+                background-color: #fff;
+                box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+            }
+
+            .form-group i {
+                position: absolute;
+                left: 15px;
+                top: 40px;
+                color: #777;
+                font-size: 18px;
+            }
+
+            .login-btn {
+                width: 100%;
+                padding: 14px;
+                background: #222;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 10px;
+                letter-spacing: 1px;
+            }
+
+            .login-btn:hover {
+                background: #444;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .additional-options {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+                font-size: 14px;
+            }
+
+            .additional-options a {
+                color: #666;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .additional-options a:hover {
+                color: #222;
+                text-decoration: underline;
+            }
+
+            .demo-accounts {
+                margin-top: 25px;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                font-size: 13px;
+                border-left: 4px solid #222;
+            }
+
+            .demo-accounts h4 {
+                margin-bottom: 10px;
+                color: #333;
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .demo-account {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+                padding: 3px 0;
+            }
+
+            .demo-account span:first-child {
+                font-weight: 500;
+                color: #555;
+            }
+
+            .demo-account span:last-child {
+                color: #666;
+                font-family: monospace;
+            }
+
+            .footer {
+                text-align: center;
+                padding: 15px 0 0;
+                margin-top: 25px;
+                font-size: 12px;
+                color: #777;
+                border-top: 1px solid #eee;
+            }
+
+            .message {
+                padding: 10px;
+                border-radius: 6px;
+                margin-top: 15px;
+                text-align: center;
+                display: none;
+                font-weight: 500;
+                font-size: 14px;
+            }
+
+            .success {
+                background-color: #e8f5e9;
+                color: #2e7d32;
+                border: 1px solid #c8e6c9;
+            }
+
+            .error {
+                background-color: #ffebee;
+                color: #c62828;
+                border: 1px solid #ffcdd2;
+            }
+
+            @media (max-width: 768px) {
+                .login-container {
+                    flex-direction: column;
+                    max-width: 450px;
+                }
+                
+                .left-section, .right-section {
+                    padding: 30px;
+                }
+                
+                .login-form-container {
+                    max-width: 100%;
+                }
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -27,8 +297,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#login">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
                     </ul>
                 </div>
@@ -41,7 +310,7 @@
                     <div class="text-center">
                         <h1 class="mx-auto my-0 text-uppercase">Concessionária</h1>
                         <h2 class="text-white-50 mx-auto mt-2 mb-5">Seja bem vindo a PP Veículos. Entre agora:</h2>
-                        <a class="btn btn-primary" href="login.html">Vá ao Login</a>
+                        <a class="btn btn-primary" href="#login">Vá ao Login</a>
                     </div>
                 </div>
             </div>
@@ -61,18 +330,84 @@
             </div>
         </section>
         <!-- Projects-->
-        <section class="projects-section bg-light" id="projects">
+        <section class="projects-section bg-light" id="login">
             <div class="container px-4 px-lg-5">
-                <!-- Featured Project Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>Shoreline</h4>
-                            <p class="text-black-50 mb-0">Grayscale is open source and MIT licensed. This means you can use it for any project - even commercial projects! Download it, customize it, and publish your website!</p>
+                <!-- Login Section -->
+                <div class="login-container">
+                    <div class="left-section">
+                        <div>
+                            <div class="logo">PP <span>Veículos</span></div>
+                            <div class="subtitle">CONCESSIONÁRIA</div>
+                            
+                            <div class="welcome-text">
+                                <h1>Seja bem-vindo</h1>
+                                <p>Entre em sua conta para acessar ofertas exclusivas de carros esportivos e serviços premium.</p>
+                            </div>
+                            
+                            <div class="car-features">
+                                <div class="feature">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Carros esportivos de alta performance</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Garantia estendida em todos os veículos</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-tools"></i>
+                                    <span>Serviço especializado e manutenção premium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="right-section">
+                        <div class="login-form-container">
+                            <h2 class="login-title">LOGIN</h2>
+                            
+                            <form id="loginForm">
+                                <div class="form-group">
+                                    <label for="username">Usuário</label>
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="username" placeholder="Digite seu usuário" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="password">Senha</label>
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="password" placeholder="Digite sua senha" required>
+                                </div>
+                                
+                                <button type="submit" class="login-btn">ENTRAR</button>
+                                
+                                <div class="additional-options">
+                                    <a href="#"><i class="fas fa-key"></i> Esqueci minha senha</a>
+                                    <a href="#"><i class="fas fa-user-plus"></i> Criar conta</a>
+                                </div>
+                                
+                                <div class="demo-accounts">
+                                    <h4>Contas de Demonstração:</h4>
+                                    <div class="demo-account">
+                                        <span>Admin:</span>
+                                        <span>admin / 1234</span>
+                                    </div>
+                                    <div class="demo-account">
+                                        <span>Usuário:</span>
+                                        <span>usuario / veiculos</span>
+                                    </div>
+                                </div>
+                                
+                                <div id="message" class="message"></div>
+                            </form>
+                            
+                            <div class="footer">
+                                <p>PP Veículos &copy; 2025 - Todos os direitos reservados</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- End Login Section -->
+                
                 <!-- Project One Row-->
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                     <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." /></div>
@@ -200,5 +535,69 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const loginForm = document.getElementById('loginForm');
+                const messageDiv = document.getElementById('message');
+                
+                // Credenciais válidas
+                const validCredentials = [
+                    { 
+                        username: 'admin', 
+                        password: '1234',
+                        type: 'admin',
+                        redirectTo: 'paineladm.html',
+                        welcomeMessage: 'Administrador'
+                    },
+                    { 
+                        username: 'usuario', 
+                        password: 'veiculos',
+                        type: 'user',
+                        redirectTo: 'indexbemvindo.html',
+                        welcomeMessage: 'Usuário'
+                    }
+                ];
+                
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const username = document.getElementById('username').value.trim();
+                    const password = document.getElementById('password').value.trim();
+                    
+                    // Verificar se os campos estão preenchidos
+                    if (!username || !password) {
+                        showMessage('Por favor, preencha todos os campos.', 'error');
+                        return;
+                    }
+                    
+                    // Verificar credenciais e obter dados do usuário
+                    const user = validCredentials.find(cred => 
+                        cred.username === username && cred.password === password
+                    );
+                    
+                    if (user) {
+                        showMessage(`Login realizado com sucesso! Bem-vindo, ${user.welcomeMessage}. Redirecionando...`, 'success');
+                        
+                        // Redirecionar conforme o tipo de usuário
+                        setTimeout(function() {
+                            window.location.href = user.redirectTo;
+                        }, 1500);
+                    } else {
+                        showMessage('Usuário ou senha incorretos. Tente novamente.', 'error');
+                    }
+                });
+                
+                function showMessage(text, type) {
+                    messageDiv.textContent = text;
+                    messageDiv.className = 'message ' + type;
+                    messageDiv.style.display = 'block';
+                    
+                    // Ocultar mensagem após 5 segundos
+                    setTimeout(function() {
+                        messageDiv.style.display = 'none';
+                    }, 5000);
+                }
+            });
+        </script>
     </body>
 </html>
