@@ -341,9 +341,7 @@
                         <input type="password" id="password" placeholder="Digite sua senha">
                     </div>
                     
-                    <form action="paineladm.html" method="POST">
-                        <button type="submit" class="login-btn">ENTRAR</button>
-                    </form>
+                    <button type="submit" class="login-btn">ENTRAR</button>
                     
                     <div class="additional-options">
                         <a href="#"><i class="fas fa-key"></i> Esqueci minha senha</a>
@@ -367,8 +365,20 @@
             
             // Credenciais válidas
             const validCredentials = [
-                { username: 'admin', password: '1234' },
-                { username: 'usuario', password: 'veiculos' }
+            { 
+                    username: 'admin', 
+                    password: '1234',
+                    type: 'admin',
+                    redirectTo: 'paineladm.html',
+                    welcomeMessage: 'Administrador'
+                },
+                { 
+                    username: 'usuario', 
+                    password: 'veiculos',
+                    type: 'user',
+                    redirectTo: 'index.html',
+                    welcomeMessage: 'Usuário'
+                }
             ];
             
             loginForm.addEventListener('submit', function(e) {
@@ -382,12 +392,12 @@
                     cred.username === username && cred.password === password
                 );
                 
-                if (isValid) {
-                    showMessage('Login realizado com sucesso! Redirecionando...', 'success');
+                if (user) {
+                    showMessage(`Login realizado com sucesso! Bem-vindo, ${user.welcomeMessage}. Redirecionando...`, 'success');
                     
-                    // Simular redirecionamento
+                    // Redirecionar conforme o tipo de usuário
                     setTimeout(function() {
-                        showMessage('Bem-vindo à PP Veículos! Acesso concedido.', 'success');
+                        window.location.href = user.redirectTo;
                     }, 1500);
                 } else {
                     showMessage('Usuário ou senha incorretos. Tente novamente.', 'error');
